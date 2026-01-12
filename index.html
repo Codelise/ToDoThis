@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>ToDo App</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- iOS Status Bar Spacer -->
+    <div class="ios-spacer"></div>
+
+    <!-- Frosted Glass Header -->
+    <header class="glass-header">
+      <div class="header-left">
+        <div class="logo-circle">
+          <span class="material-symbols-outlined">task_alt</span>
+        </div>
+        <h1 class="header-title">My Todo List</h1>
+      </div>
+      <button class="settings-btn">
+        <span class="material-symbols-outlined">settings</span>
+      </button>
+    </header>
+
+    <main>
+      <!-- Stats Overview -->
+      <div class="stats-section">
+        <div class="stats-card">
+          <p class="stats-label">Daily Progress</p>
+          <div class="stats-numbers">
+            <p class="stats-count" id="active-count">3</p>
+            <p class="stats-text">tasks remaining</p>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress-bar"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="filter-section">
+        <button class="filter-chip active" id="all-filter" data-filter="all">
+          All
+        </button>
+        <button
+          class="filter-chip inactive"
+          id="active-filter"
+          data-filter="active"
+        >
+          Active
+        </button>
+        <button
+          class="filter-chip inactive"
+          id="done-filter"
+          data-filter="done"
+        >
+          Done
+        </button>
+      </div>
+
+      <!-- Clear completed Button (hidden by default) -->
+      <div class="clear-section" style="padding: 0 1rem 0.75rem; display: none">
+        <button class="clear-completed-btn">
+          <span class="material-symbols-outlined">delete_sweep</span>
+          <span>Clear Completed</span>
+        </button>
+      </div>
+
+      <!-- List Section -->
+      <div class="task-list">
+        <ul id="todoList">
+          <li class="task-item" data-id="1736668800123">
+            <div class="checkbox-container">
+              <input
+                type="checkbox"
+                id="todo-1736668800123"
+                class="todo-checkbox"
+              />
+            </div>
+            <label for="todo-1736668800123" class="task-text"
+              >Finalize UI Plan</label
+            >
+
+            <div class="task-menu-container">
+              <button class="task-menu-btn" aria-label="Task options">
+                <span class="material-symbols-outlined">more_vert</span>
+              </button>
+
+              <div class="task-dropdown" style="display: none">
+                <button class="dropdown-item edit-btn" data-action="edit">
+                  <span class="material-symbols-outlined">edit</span>
+                  <span>Edit</span>
+                </button>
+                <button class="dropdown-item delete-btn" data-action="delete">
+                  <span class="material-symbols-outlined">delete</span>
+                  <span>Delete</span>
+                </button>
+              </div>
+            </div>
+          </li>
+
+          <li class="task-item task-completed" data-id="1736668800456">
+            <div class="checkbox-container">
+              <input type="checkbox" class="todo-checkbox" checked />
+            </div>
+            <p class="task-text completed">Research dark mode trends</p>
+            <div class="task-icon success">
+              <span class="material-symbols-outlined">verified</span>
+            </div>
+          </li>
+
+          <li class="task-item" data-id="1736668800789">
+            <div class="checkbox-container">
+              <input type="checkbox" class="todo-checkbox" />
+            </div>
+            <p class="task-text">Prepare project documentation</p>
+            <div class="task-icon">
+              <span class="material-symbols-outlined">more_vert</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- Empty state spacer -->
+      <div class="empty-spacer"></div>
+    </main>
+
+    <!-- Bottom Input Bar -->
+    <div class="bottom-input">
+      <div class="input-container">
+        <form class="input-wrapper" id="task-form">
+          <div class="input-inner">
+            <span class="material-symbols-outlined">add_circle</span>
+            <input
+              class="input-field"
+              id="task-input"
+              name="task"
+              required
+              autocomplete="off"
+              placeholder="Add a new task..."
+              type="text"
+            />
+          </div>
+          <button class="submit-btn" type="submit">
+            <span class="material-symbols-outlined">arrow_upward</span>
+          </button>
+        </form>
+        <!-- iOS Home Indicator Spacer -->
+        <div class="ios-home-spacer"></div>
+      </div>
+    </div>
+
+    <!-- Footer Attribution -->
+    <footer>
+      <p class="footer-text">Minimalist Todo Engine v2.0</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
