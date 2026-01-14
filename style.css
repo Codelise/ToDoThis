@@ -269,7 +269,7 @@ main {
   min-height: 4rem;
   border-radius: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.2s;
+  transition: all 0.4s ease;
   cursor: pointer;
 }
 
@@ -383,9 +383,17 @@ main {
 
 /* Completed Task */
 .task-completed {
-  background-color: rgba(30, 30, 30, 0.5);
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  opacity: 0.7;
+  background-color: rgba(30, 30, 30, 0.3);
+  border: 1px dashed rgba(255, 255, 255, 0.05);
+  opacity: 0.4;
+  transform: scale(0.98);
+}
+
+#todoList[data-filter="done"] .task-completed {
+  opacity: 1;
+  transform: none;
+  background-color: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .task-completed:hover {

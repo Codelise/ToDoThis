@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>ToDo App</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <title>ToDoThis</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -67,16 +69,19 @@
         </button>
       </div>
 
-      <!-- Clear completed Button (hidden by default) -->
-      <div class="clear-section" style="padding: 0 1rem 0.75rem; display: none">
-        <button class="clear-completed-btn">
-          <span class="material-symbols-outlined">delete_sweep</span>
-          <span>Clear Completed</span>
-        </button>
-      </div>
-
       <!-- List Section -->
       <div class="task-list">
+        <!-- Empty State (shown when no todos) -->
+        <div class="empty-state" id="empty-state" style="display: none">
+          <span
+            class="material-symbols-outlined"
+            style="font-size: 64px; color: #4b5563"
+            >inbox</span
+          >
+          <p style="color: #6b7280; font-size: 1rem; margin-top: 1rem">
+            No todos yet. Add one above!
+          </p>
+        </div>
         <ul id="todoList">
           <li class="task-item" data-id="1736668800123">
             <div class="checkbox-container">
@@ -100,7 +105,11 @@
                   <span class="material-symbols-outlined">edit</span>
                   <span>Edit</span>
                 </button>
-                <button class="dropdown-item delete-btn" data-action="delete">
+                <button
+                  class="dropdown-item delete-btn"
+                  id="delete-btn"
+                  data-action="delete"
+                >
                   <span class="material-symbols-outlined">delete</span>
                   <span>Delete</span>
                 </button>
@@ -136,7 +145,7 @@
     <!-- Bottom Input Bar -->
     <div class="bottom-input">
       <div class="input-container">
-        <form class="input-wrapper" id="task-form">
+        <form id="task-form" class="input-wrapper" name="task-form">
           <div class="input-inner">
             <span class="material-symbols-outlined">add_circle</span>
             <input
@@ -158,11 +167,6 @@
       </div>
     </div>
 
-    <!-- Footer Attribution -->
-    <footer>
-      <p class="footer-text">Minimalist Todo Engine v2.0</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>
